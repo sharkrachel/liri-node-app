@@ -25,22 +25,24 @@ for (var i = 3; i < argv.length; i++) {
 
 switch (liriCommand) {
     case "concert-this":
-    concertThis();
-    break;
+        concertThis();
+        break;
 }
 
 //bands in town
 
-function concertThis(){
-var concertURL = "https://rest.bandsintown.com/artists/" + userRequest + "/events?app_id=codingbootcamp";
+function concertThis() {
+    var concertURL = "https://rest.bandsintown.com/artists/" + userRequest + "/events?app_id=codingbootcamp";
 
-axios.get(concertURL).then(
-    function(response) {
-        concertInfo = response.data[i];
-        console.log("Venue: " + concertInfo.venue.name);
-        console.log("Location: " + concertInfo.venue.city);
-        console.log("Date: " + moment(concertInfo.datetime).format("MM/DD/YYYY"));
-    });
+    axios.get(concertURL).then(
+        function (response) {
+            for (var i = 0; i < response.data.length; i++) {
+                concertInfo = response.data[i];
+                console.log("Venue: " + concertInfo.venue.name);
+                console.log("Location: " + concertInfo.venue.city);
+                console.log("Date: " + moment(concertInfo.datetime).format("MM/DD/YYYY"));
+            }
+        });
 }
 
 
