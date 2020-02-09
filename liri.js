@@ -1,8 +1,8 @@
-require("dotenv").config();
+// require("dotenv").config();
 
 var keys = require("./keys");
 
-var spotify = new Spotify(keys.spotify);
+// var spotify = new Spotify(keys.spotify);
 var axios = require("axios")
 
 // set index 2 definition
@@ -13,11 +13,10 @@ var userRequest = " ";
 
 for (var i = 3; i < argv.length; i++) {
     if (i > 3) {
-        formattedUserRequest = userRequest + " " + argv[i];
+        userRequest = userRequest + " " + argv[i];
     }
 
     else {
-        formattedUserRequest += argv[i];
+        userRequest += argv[i];
     }
 }
-
