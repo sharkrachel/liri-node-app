@@ -21,6 +21,17 @@ for (var i = 3; i < argv.length; i++) {
     }
 }
 
+//bands in town
+
 var concertURL = "https://rest.bandsintown.com/artists/" + userRequest + "/events?app_id=codingbootcamp";
 
-console.log(concertURL);
+axios.get(concertURL).then(
+    function(response) {
+        concertInfo = response.data[i];
+        console.log("Venue: " + concertInfo.venue.name);
+        console.log("Location: " + concertInfo.venue.city);
+        console.log("Date: " + concertInfo.datetime);
+    });
+
+
+
