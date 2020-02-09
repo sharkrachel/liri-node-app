@@ -23,8 +23,15 @@ for (var i = 3; i < argv.length; i++) {
     }
 }
 
+switch (liriCommand) {
+    case "concert-this":
+    concertThis();
+    break;
+}
+
 //bands in town
 
+function concertThis(){
 var concertURL = "https://rest.bandsintown.com/artists/" + userRequest + "/events?app_id=codingbootcamp";
 
 axios.get(concertURL).then(
@@ -34,6 +41,6 @@ axios.get(concertURL).then(
         console.log("Location: " + concertInfo.venue.city);
         console.log("Date: " + moment(concertInfo.datetime).format("MM/DD/YYYY"));
     });
-
+}
 
 
