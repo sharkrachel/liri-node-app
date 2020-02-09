@@ -5,8 +5,10 @@ var keys = require("./keys");
 // var spotify = new Spotify(keys.spotify);
 var axios = require("axios")
 
-// set index 2 definition
+// include moment in app
+var moment = require('moment');
 
+// set definition of process.argv
 var argv = process.argv;
 var liriCommand = process.argv[2];
 var userRequest = "";
@@ -30,7 +32,7 @@ axios.get(concertURL).then(
         concertInfo = response.data[i];
         console.log("Venue: " + concertInfo.venue.name);
         console.log("Location: " + concertInfo.venue.city);
-        console.log("Date: " + concertInfo.datetime);
+        console.log("Date: " + moment(concertInfo.datetime).format("MM/DD/YYYY"));
     });
 
 
