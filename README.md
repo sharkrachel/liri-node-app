@@ -16,6 +16,5 @@ To search for songs - simply type into the command line 'spotify-this-song [inse
 To search for movies - simply type into the command line 'movie-this [insert movie title]'
 
 ### Watch it work!
-[BASIC TUTORIAL!]
-(https://github.com/sharkrachel/liri-node-app/blob/master/node-liri-app-basic-tutorial.mov?raw=true)
+[BASIC TUTORIAL](https://github.com/sharkrachel/liri-node-app/blob/master/node-liri-app-basic-tutorial.mov?raw=true)
 
