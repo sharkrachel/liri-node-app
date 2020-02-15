@@ -8,6 +8,10 @@ Liri searches for your favorite movies, artists and songs. With a simple command
 
 The app uses the Bands in Town API to search for upcoming concerts, the Spotify API to search for songs and the OMBd API to search for movie information.
 
+### How this app was built
+Liri node app was built using node.js, Bands In Town API, Spotify API and the OMBd API. It was built by Rachel Sipes as part of the University of Arizona's Fullstack Development Bootcamp.
+
+
 ### How to use the app
 To search for upcoming concerts - simply type into the command line 'concert-this [insert artist]'. 
 
