@@ -19,4 +19,4 @@ To search for movies - simply type into the command line 'movie-this [insert mov
 [BASIC DEMO](https://github.com/sharkrachel/liri-node-app/blob/master/node-liri-app-basic-tutorial.mov?raw=true)
 
 
-[EXTRA FUNCTIONALITIES DEMO](https://github.com/sharkrachel/liri-node-app/blob/master/node-liri-app-other-functionalities-tutorial.mov)
+[EXTRA FUNCTIONALITIES DEMO](node-liri-app-other-functionalities-tutorial.mov)
