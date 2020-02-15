@@ -9,5 +9,9 @@ Liri searches for your favorite movies, artists and songs. With a simple command
 The app uses the Bands in Town API to search for upcoming concerts, the Spotify API to search for songs and the OMBd API to search for movie information.
 
 ### How to use the app
-To search for upcoming concerts - simply type 'concert-this [insert artist]. 
+To search for upcoming concerts - simply type into the command line 'concert-this [insert artist]'. 
+To search for songs - simply type into the command line 'spotify-this-song [insert song title]'.
+To search for movies - simply type into the command line 'movie-this [insert movie title]'
+
+
 
