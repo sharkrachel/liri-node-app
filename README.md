@@ -15,5 +15,6 @@ To search for movies - simply type into the command line 'movie-this [insert mov
 
 ### Watch it work!
 
-node-liri-app-basic-tutorial.mov
+!Basic Demonstration
+(node-liri-app-basic-tutorial.mov)
 
