@@ -74,6 +74,10 @@ function concertThis() {
 
 // spotify
 function spotifyThis() {
+    if (!userRequest) {
+        userRequest = "The Sign"
+    }
+
     spotify.search({
         type: 'track',
         query: userRequest,
@@ -82,25 +86,31 @@ function spotifyThis() {
             if (err) {
                 return console.log('Error occurred: ' + err);
             }
-            //separates the response array
-            for (var i = 0; i < data.tracks.items.length; i++) {
-                //log artist name
-                console.log("Artist: ", data.tracks.items[i].artists[0].name);
-                //log song name
-                console.log("Song Name: ", data.tracks.items[i].name);
-                //log url
-                console.log("URL: ", data.tracks.items[i].preview_url);
-                //log album name
-                console.log("Album: ", data.tracks.items[i].album.name);
-                console.log("\n-------------------------------------\n");
-            }
+                //separates the response array
+                for (var i = 0; i < data.tracks.items.length; i++) {
+                    //log artist name
+                    console.log("Artist: ", data.tracks.items[i].artists[0].name);
+                    //log song name
+                    console.log("Song Name: ", data.tracks.items[i].name);
+                    //log url
+                    console.log("URL: ", data.tracks.items[i].preview_url);
+                    //log album name
+                    console.log("Album: ", data.tracks.items[i].album.name);
+                    console.log("\n-------------------------------------\n");
+                }
         })
 }
 // ombd
 function movieThis() {
     //url to search
+
+    if (!userRequest) {
+        userRequest = "Mr. Nobody"
+    }
+
     var queryURL = "http://www.omdbapi.com/?t=" + userRequest + "&y=&plot=short&apikey=trilogy";
     //axios call
+
     axios.get(queryURL).then(
         function (response) {
             //log movie title
@@ -136,7 +146,7 @@ function doThis() {
         //change liricommand definition to index 0
         liriCommand = readMeInput[0];
         //change userrequest definition to index 1. replace "" with nothing
-        userRequest= readMeInput[1].replace(/"/g, '');
+        userRequest = readMeInput[1].replace(/"/g, '');
         //call the switch function
         menu();
     })
