@@ -57,6 +57,12 @@ function concertThis() {
     //run axios call
     axios.get(concertURL).then(
         function (response) {
+
+            if (response.data.length === 0) {
+                console.log("\n-------------------------------------\n");
+                console.log("This artist / band is not on tour");
+                console.log("\n-------------------------------------\n");
+            }
             //loop through results to display all upcoming concert information
             for (var i = 0; i < response.data.length; i++) {
                 //set variable so don't have to type response.data[i] over and over.
@@ -69,7 +75,10 @@ function concertThis() {
                 console.log("Date: " + moment(concertInfo.datetime).format("MM/DD/YYYY"));
                 console.log("-------------------------------------\n");
             }
+
         });
+
+
 }
 
 // spotify
@@ -86,18 +95,24 @@ function spotifyThis() {
             if (err) {
                 return console.log('Error occurred: ' + err);
             }
-                //separates the response array
-                for (var i = 0; i < data.tracks.items.length; i++) {
-                    //log artist name
-                    console.log("Artist: ", data.tracks.items[i].artists[0].name);
-                    //log song name
-                    console.log("Song Name: ", data.tracks.items[i].name);
-                    //log url
-                    console.log("URL: ", data.tracks.items[i].preview_url);
-                    //log album name
-                    console.log("Album: ", data.tracks.items[i].album.name);
-                    console.log("\n-------------------------------------\n");
-                }
+
+            if (data.tracks.items.length === 0) {
+                console.log("\n-------------------------------------\n");
+                console.log("This song cannot be found, please try another song")
+                console.log("\n-------------------------------------\n");
+            }
+            //separates the response array
+            for (var i = 0; i < data.tracks.items.length; i++) {
+                //log artist name
+                console.log("Artist: ", data.tracks.items[i].artists[0].name);
+                //log song name
+                console.log("Song Name: ", data.tracks.items[i].name);
+                //log url
+                console.log("URL: ", data.tracks.items[i].preview_url);
+                //log album name
+                console.log("Album: ", data.tracks.items[i].album.name);
+                console.log("\n-------------------------------------\n");
+            }
         })
 }
 // ombd
@@ -113,6 +128,7 @@ function movieThis() {
 
     axios.get(queryURL).then(
         function (response) {
+            if (response.data.Title != undefined) {           
             //log movie title
             console.log("Title: ", response.data.Title);
             //log release year
@@ -130,6 +146,14 @@ function movieThis() {
             //log actors
             console.log("Actors: ", response.data.Actors);
             console.log("\n-------------------------------------\n");
+        }
+
+        else {
+            console.log("\n-------------------------------------\n")
+            console.log("Movie cannot be found, please try another movie");
+            console.log("\n-------------------------------------\n");
+        }
+
         }
     )
 }
